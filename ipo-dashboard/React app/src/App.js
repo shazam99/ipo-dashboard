@@ -15,7 +15,6 @@ function App() {
 
     const isAuthenticated = (user) => {
         return user === true;
-        // return true;
     };
 
     return (

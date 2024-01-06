@@ -16,7 +16,6 @@ const IPO = () => {
             try {
                 const ipoData = await api.getIPOs();
                 setData(ipoData);
-                console.log(ipoData)
             } catch (error) {
                 console.error('Error fetching Stocks:', error);
                 setError(error);
@@ -28,7 +27,7 @@ const IPO = () => {
         fetchIPO();
     }, []);
 
-    
+
     const truncateText = (text, maxLength) => {
         return text.length > maxLength ? text.slice(0, maxLength) + '...' : text;
     };

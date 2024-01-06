@@ -16,7 +16,7 @@ const Login = ({ navigation }) => {
                 if (registerUser[i].email === email) {
                     if (registerUser[i].password === password) {
                         dispatch(setUser(true));
-                        navigation.navigate('Stocks');
+                        navigation.navigate('Home');
                         return;
                     }
                 }

@@ -21,11 +21,11 @@ const Currency = () => {
     const [dropdown2, setDropdown2] = useState(currencySymbols[1]);
 
     const fetchCurrencyData = async () => {
+        setData(null);
         setLoading(true);
         try {
             const cData = await api.getTopCurrecnyConversion();
             setData(cData);
-            console.log(cData);
         } catch (error) {
             console.error('Error fetching Currency Data:', error);
             setError(error);
@@ -39,7 +39,6 @@ const Currency = () => {
             const currencyPair = `${dropdown1}${dropdown2}`;
             const convertData = await api.getMyCurrency(currencyPair);
             setConvertData(convertData);
-            console.log(convertData);
         } catch (error) {
             console.error('Error fetching Convert Currency:', error);
             setError(error);
@@ -59,18 +58,20 @@ const Currency = () => {
     return (
         <div className='main mt-5' style={{
             background: colors[theme].background,
-            color: colors[theme].text, }}>
+            color: colors[theme].text,
+        }}>
+            {loading && <Loader />}
+
+            {error && (
+                <div className="alert alert-danger" role="alert">
+                    Error: {error.message}. Please try again.
+                </div>
+            )}
 
             <div className="currency-container">
                 <div className="row">
-                    <h1 className="dashboard-title mb-2 mt-4 ">Currency Rates</h1>
-                    {loading && <Loader />}
+                    <h1 className="dashboard-title mb-2 mt-4 ">Currency Rates <button className='btn btn-sm btn-info' onClick={() => fetchCurrencyData()}>Refresh Rates</button></h1>
 
-                    {error && (
-                        <div className="alert alert-danger" role="alert">
-                            Error: {error.message}. Please try again.
-                        </div>
-                    )}
 
                     {data && data.map((conversion, index) => {
                         const formattedSymbol =
@@ -91,6 +92,8 @@ const Currency = () => {
                             </div>
                         );
                     })}
+                    
+
                 </div>
                 <hr />
                 <div>

@@ -1,78 +1,56 @@
 import { NATIVE_APP_API_KEY } from '@env';
 
-const BASE_URL = 'https://cloud.iexapis.com/stable';
+const BASE_URL = 'https://api.iex.cloud/v1';
 
 const api = {
-    getStocks: async () => {
+    getIPOs: async () => {
         try {
-            const response = await fetch(`${BASE_URL}/ref-data/symbols?token=${NATIVE_APP_API_KEY}`);
+            const response = await fetch(`${BASE_URL}/data/CORE/UPCOMING_IPOS/market?token=${NATIVE_APP_API_KEY}`);
 
             if (!response.ok) {
-                throw new Error('Failed to fetch Stocks');
+                throw new Error('Failed to fetch IPO');
             }
 
             const data = await response.json();
             return data;
         } catch (error) {
-            console.error('Error fetching Stocks:', error);
+            console.error('Error fetching IPO:', error);
             throw error;
         }
     },
 
-    getSingleStock: async (stock) => {
+    getTopCurrecnyConversion: async () => {
         try {
-            const response = await fetch(`${BASE_URL}/stock/${stock}/quote?token=${NATIVE_APP_API_KEY}`);
+            const response = await fetch(`${BASE_URL}/fx/latest?symbols=USDCAD,GBPUSD,USDJPY,USDINR&token=${NATIVE_APP_API_KEY}`);
 
             if (!response.ok) {
-                throw new Error(`Failed to ${stock} data`);
+                throw new Error(`Failed to fetch Currency data`);
             }
 
             const data = await response.json();
             return data;
         } catch (error) {
-            console.error('Error creating user:', error);
+            console.error('Error Currency data:', error);
             throw error;
         }
     },
 
-    getChartData: async (stock, range) => {
+    getMyCurrency: async (currency) => {
         try {
-            const response = await fetch(`${BASE_URL}/stock/${stock}/chart/${range}?token=${NATIVE_APP_API_KEY}`);
+            const response = await fetch(`${BASE_URL}/fx/latest?symbols=${currency}&token=${NATIVE_APP_API_KEY}`);
 
             if (!response.ok) {
-                throw new Error(`Failed to ${stock} data`);
+                throw new Error(`Failed to fetch Currency data`);
             }
 
             const data = await response.json();
             return data;
         } catch (error) {
-            console.error('Error creating user:', error);
+            console.error('Error Currency data:', error);
             throw error;
         }
     },
 
-    getFavStocks: async (favs) => {
-        if (favs.length !== 0) {
-            try {
-                const apiUrl = symbol => `${BASE_URL}/stock/${symbol}/quote?token=${NATIVE_APP_API_KEY}`;
-
-                const responses = await Promise.all(favs.map(symbol => fetch(apiUrl(symbol))));
-
-                const data = await Promise.all(responses.map(response => {
-                    if (!response.ok) {
-                        throw new Error(`HTTP error! Status: ${response.status}`);
-                    }
-                    return response.json();
-                }));
-
-                return data;
-            } catch (error) {
-                console.error('Error fetching stock data:', error);
-            }
-        } else {
-            return [];
-        }
-    }
 };
 
 export default api;

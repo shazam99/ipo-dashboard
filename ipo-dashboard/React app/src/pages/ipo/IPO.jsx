@@ -11,7 +11,7 @@ const IPO = () => {
     const { theme, colors } = useSelector((state) => state.theme);
 
     useEffect(() => {
-        const fetchStocks = async () => {
+        const fetchIPO = async () => {
             setLoading(true);
             try {
                 const ipoData = await api.getIPOs();
@@ -25,7 +25,7 @@ const IPO = () => {
             }
         };
 
-        fetchStocks();
+        fetchIPO();
     }, []);
 
     

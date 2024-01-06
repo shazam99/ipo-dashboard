@@ -1,0 +1,25 @@
+/* Currency.css */
+.select-container {
+    margin-bottom: 15px;
+}
+.currency-container{
+    min-height: calc(100vh - 350px);
+}
+.select-container select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.select-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+
+.button-container {
+    margin-top: 15px;
+}

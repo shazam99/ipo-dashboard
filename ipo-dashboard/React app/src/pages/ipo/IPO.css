@@ -2,7 +2,7 @@
     min-height: calc(100vh - 350px);
 }
 
-.card-body{
+.stockspage .card-body{
     height: 280px;
     overflow-y: auto;
 }

@@ -1,12 +1,12 @@
-# Stock Market Dashboard
+# IPO  Dashboard
 
-The Stock Market Dashboard is an interactive platform for users to view and analyze real-time stock market data. It offers features like viewing different stock categories, a personalized dashboard, real-time data visualization, and customizable settings.
+The IPO  Dashboard is an interactive platform for users to view and analyze Upcoming IPO Calendar and the latest currency exchange rates. This project aims to demonstrate skills in API integration, user authentication, responsive design, and cross-platform development using React for web and React Native for mobile.
 
 ## Cloning the Repository
 
 Clone the repository using the following command:
     ```
-    git clone https://github.com/shazam99/StocksApp.git
+    git clone https://github.com/shazam99/ipo-dashboard.git
     ```
 
 
@@ -43,15 +43,13 @@ The project is divided into two folders:
         - User can change the theme usig toggle button in Header.
         - Click on the "Login" button in the header to log in. If you don't have an account, first create an account by clicking on the register button on the login page.
         - After registering, you will be redirected to the login page.
-        - After login, you will be redirected to the stock market dashboard, where you can see, search, and view all stocks.
-        - Save stocks by clicking on the 'Favorite' button present on the stock.
-        - Access saved stocks by clicking on the 'Favorites' tab in the header.
+        - After login, you will be redirected to the IPO dashboard, where you can view all IPO.
+        - You can see live conversion rates and can convert any currency as well.
 
         **Summary:**
         - Toggle theme using theme button in Header.
-        - The app lists all stocks where the user can search for a specific stock and see details.
-        - The details of stocks are shown on the details page, accessible by clicking on the 'View' button for stocks.
-        - The details page shows all information regarding the stock along with chart data for 1 Day, 1 Week, 1 Month, 6 Months, and 1 Year.
+        - The app lists all IPO where the user can see all views.
+        - You can see live conversion rates and can convert any currency as well.
         - Users have to log in first to access all functionalities and can log out anytime.
 
 
@@ -80,17 +78,7 @@ The project is divided into two folders:
     - Visit [http://localhost:19000](http://localhost:19000) to access the app.
 
     - **Usage of the App:**
-        - The app opens the landing page.
-        - All routes are protected and can't be accessed until the user logs in.
-        - Click on the "Login" button in the header to log in. If you don't have an account, first create an account by clicking on the register button on the login page.
-        - After registering, you will be redirected to the login page.
-        - After login, you will be redirected to the stock market dashboard, where you can see, search, and view all stocks.
-        - Save stocks by clicking on the 'Favorite' button present on the stock.
-        - Access saved stocks by clicking on the 'Favorites' tab in the header.
 
         **Summary:**
-        - The app lists all stocks where the user can search for a specific stock and see details.
-        - The details of stocks are shown on the details page, accessible by clicking on the 'View' button for stocks.
-        - The details page shows all information regarding the stock along with chart data for 1 Day, 1 Week, 1 Month, 6 Months, and 1 Year.
-        - Users have to log in first to access app
+
 

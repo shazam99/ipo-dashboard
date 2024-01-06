@@ -1,0 +1,13 @@
+.loginDiv{
+    height: calc(100vh - 350px);
+}
+.loginFields{
+    max-width: 500px;
+    margin: 100px auto;
+}
+
+@media screen and (max-width:500px) {
+    .loginDiv {
+            height: calc(100vh - 250px);
+        }
+}

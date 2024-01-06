@@ -1,0 +1,29 @@
+.stockspage{
+    min-height: calc(100vh - 350px);
+}
+
+.card-body{
+    height: 280px;
+    overflow-y: auto;
+}
+/* IPOList.css */
+.custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: #19BA92 #f0f0f0;
+    /* Change #4CAF50 to your preferred green color */
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+    width: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #19BA92;
+    /* Change #4CAF50 to your preferred green color */
+}
+
+@media screen and (max-width:500px) {
+    .loginDiv {
+        min-height: calc(100vh - 250px);
+    }
+}

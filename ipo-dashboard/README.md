@@ -80,5 +80,8 @@ The project is divided into two folders:
     - **Usage of the App:**
 
         **Summary:**
-
+        - Toggle theme using theme button in Header.
+        - The app lists all IPO where the user can see all views.
+        - You can see live conversion rates and can convert any currency as well.
+        - Users have to log in first to access all functionalities and can log out anytime.
 

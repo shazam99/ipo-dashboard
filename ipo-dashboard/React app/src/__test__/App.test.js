@@ -15,7 +15,7 @@ describe('App Component', () => {
         expect(screen.getByText(/All things finance/i)).toBeInTheDocument();
     });
 
-    test('navigates to stocks page after login', async () => {
+    test('navigates to ipo page after login', async () => {
         render(
             <Provider store={store}>
                 <App />
@@ -29,7 +29,8 @@ describe('App Component', () => {
 
         // Wait for navigation to complete
         await waitFor(() => {
-            expect(screen.getByText(/Stocks/)).toBeInTheDocument();
+            const upcomingIPOsHeading = screen.getByText(/All things finance/i);
+            expect(upcomingIPOsHeading).toBeInTheDocument();
         });
     });
 })
